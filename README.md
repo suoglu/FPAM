@@ -79,8 +79,8 @@ Hardware tests of all modules is done by a [VIO](https://www.xilinx.com/products
 
 - Single-Precision Adder: 1 December 2022, with [Icarus Verilog](http://iverilog.icarus.com/).
 
-**Last Test:** -
-
 ## Issues
 
-Nothing so far
+Nothing so far.
+
+For newly found bugs; [contact me](https://suoglu.github.io/contact.html), open an issue at [gitlab (preferred)](https://gitlab.com/suoglu/fpam/-/issues/new) or [github](https://github.com/suoglu/FPAM/issues/new).
