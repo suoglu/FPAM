@@ -1,0 +1,72 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Nov 30 22:33:36 2022
+[*]
+[dumpfile] "/home/suoglu/Projects/Personal/fpam/wave.vcd"
+[dumpfile_mtime] "Wed Nov 30 22:31:36 2022"
+[dumpfile_size] 9833
+[savefile] "/home/suoglu/Projects/Personal/fpam/sim/waveform32.gtkw"
+[timestart] 0
+[size] 1920 1011
+[pos] -1 -1
+*-12.358090 21810 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_add32.
+[sst_width] 221
+[signals_width] 465
+[sst_expanded] 1
+[sst_vpaned_height] 287
+@821
+tb_add32.state[320:0]
+@200
+-Num0
+@28
+tb_add32.uut.sign0
+@24
+tb_add32.uut.exp0[7:0]
+@28
+tb_add32.uut.frac0[22:0]
+@200
+-Num1
+@28
+tb_add32.uut.sign1
+@24
+tb_add32.uut.exp1[7:0]
+@28
+tb_add32.uut.frac1[22:0]
+@200
+-Result
+@28
+tb_add32.uut.signRes
+@24
+tb_add32.uut.expRes[7:0]
+@28
+tb_add32.uut.fracRes[22:0]
+@200
+-Expected
+@28
+tb_add32.signExpected
+@24
+tb_add32.expExpected[7:0]
+@28
+tb_add32.fracExpected[22:0]
+@200
+-Flags
+@28
+tb_add32.uut.NaN
+tb_add32.uut.overflow
+tb_add32.uut.precisionLost
+tb_add32.uut.zero
+@200
+-UUT
+@28
+tb_add32.uut.bigNum
+tb_add32.uut.bigFloat[23:0]
+tb_add32.uut.smallFloat[23:0]
+tb_add32.uut.smallFloat_shifted[23:0]
+tb_add32.uut.resFloat_pre[23:0]
+tb_add32.uut.resFloat[23:0]
+tb_add32.uut.expInc
+@24
+tb_add32.uut.expDec[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

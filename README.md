@@ -5,11 +5,11 @@
 1. About
 2. Modules
 3. Interface Description
-<!-- 4. Performance and Resource Utilization
+4. Performance and Resource Utilization
 5. Simulation
 6. Test
 7. Status Information
-8. Issues -->
+8. Issues
 
 [![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-6C488A.svg)](https://gitlab.com/suoglu/fpam)
 [![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-3D76C2.svg)](https://github.com/suoglu/FPAM)
@@ -18,7 +18,9 @@
 
 ## About
 
-Combinational adder and multiplier modules for IEEE 754 single-precision and double-precision floating point format.
+**Work in Progress!**
+
+Fully combinational adder and multiplier modules for IEEE 754 single-precision (binary32) and double-precision (binary64) floating point format.
 
 ## Modules
 
@@ -56,17 +58,29 @@ I: Input  O: Output
 | `Common Input` | bool | In wrapper, both adder and multiplier uses same inputs |
 | `Common Output` | bool | In wrapper, both adder and multiplier uses same outputs, enables `select`  |
 
-<!-- 
+## Performance and Resource Utilization
+
+### Single-Precision Adder
+
+- Utilization on Artix-7 after synthesis: 473 LUT as Logic
+- Maximum clock frequency (for input output registers) on Artix-7: 65 MHz
+
 ## Simulation
 
-INFO ABOUT SIMULATION
+Test benches will both generate a waveform and display overview of the test cases. Overview messages show operands, result, manually calculated expected result, and flag information.
 
 ## Test
 
-INFO ABOUT TEST CODE 
+Hardware tests of all modules is done by a [VIO](https://www.xilinx.com/products/intellectual-property/vio.html) and placing a [register](Util/register.v) between [VIO](https://www.xilinx.com/products/intellectual-property/vio.html) and module ports.
 
 ## Status Information
 
-**Last Simulation:** -
+**Last Simulation:**
 
-**Last Test:** - -->
+- Single-Precision Adder: 1 December 2022, with [Icarus Verilog](http://iverilog.icarus.com/).
+
+**Last Test:** -
+
+## Issues
+
+Nothing so far
