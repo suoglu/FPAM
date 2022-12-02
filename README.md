@@ -60,10 +60,17 @@ I: Input  O: Output
 
 ## Performance and Resource Utilization
 
+All values in this section are for Xilinx Artix-7 (_XC7A100TCSG324-1_) FPGA.
+
 ### Single-Precision Adder
 
-- Utilization on Artix-7 after synthesis: 473 LUT as Logic
-- Maximum clock frequency (for input output registers) on Artix-7: 65 MHz
+- Utilization after synthesis: 473 LUT as Logic
+- Maximum clock frequency (for input output registers): 65 MHz
+
+### Double-Precision Adder
+
+- Utilization after synthesis: 985 LUT as Logic
+- Maximum clock frequency (for input output registers): 50 MHz
 
 ## Simulation
 
