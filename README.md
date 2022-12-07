@@ -53,6 +53,7 @@ Following parameters can be used to modify the size of operation and the output 
 |Parameter|Possible Values|Description|
 | :----: | :-----:  | ---- |
 | `BIT_SIZE` | _32_, _64_ | Operation Size |
+| `ROUNDING_TYPE` | bool | Rounding to the closer value, when disabled floor |
 | `ENABLE_FLAGS_MASTER` | bool | Master enable for flags |
 | `ENABLE_FLAGS_COMMON` | bool | Enable `flagRaised` |
 | `ENABLE_FLAGS_OF` | bool | Enable `overflow` |
@@ -64,17 +65,17 @@ For custom exponent formats, one can enable "value override" mode with `FORMAT_O
 
 ## Performance and Resource Utilization
 
-All values in this section are for Xilinx Artix-7 (_XC7A100TCSG324-1_) FPGA.
+All values in this section are for Xilinx Artix-7 (_XC7A100TCSG324-1_) FPGA. (_Without Rounding_/_With Rounding_)
 
 ### Single-Precision Adder
 
-- Utilization after synthesis: 473 LUT as Logic
-- Maximum clock frequency (for input output registers): 65 MHz
+- Utilization after synthesis: 473/502 LUT as Logic
+- Maximum clock frequency (for input output registers): 65/55 MHz
 
 ### Double-Precision Adder
 
-- Utilization after synthesis: 985 LUT as Logic
-- Maximum clock frequency (for input output registers): 50 MHz
+- Utilization after synthesis: 985/1007 LUT as Logic
+- Maximum clock frequency (for input output registers): 50/40 MHz
 
 ## Simulation
 

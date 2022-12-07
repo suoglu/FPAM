@@ -16,6 +16,7 @@
 
 module fp_adder#(
   parameter BIT_SIZE = 32,
+  parameter ROUNDING_TYPE = 0,
   parameter ENABLE_FLAGS_MASTER = 1,
   parameter ENABLE_FLAGS_COMMON = 1,
   parameter ENABLE_FLAGS_OF     = 1,
@@ -25,7 +26,6 @@ module fp_adder#(
   parameter FORMAT_OVERRIDE     = 0, //!not supported, if enabled BIT_SIZE must be set accordingly
   parameter EXPONENT_SIZE_OR    = 5, // BIT_SIZE = 1 + EXPONENT_SIZE_OR + FRACTION_SIZE_OR
   parameter FRACTION_SIZE_OR    = 10
-
 )(
   //Optional Flags
   output overflow,
@@ -89,9 +89,10 @@ module fp_adder#(
   wire resOverflow = (&expBig || (&expBig[1+:EXPONENT_SIZE-1] && expInc)) && ~NaN; 
   //if big num is inf or exponent of result overflows and both nums are number ^
   wire [EXPONENT_SIZE-1:0] expDiff = expBig - expSmall - (!bothSubnorm && smallSubN);
-  wire [FRACTION_SIZE:0] lostValue, smallFloat_shifted;
+  wire [FRACTION_SIZE:0] lostValue, smallFloat_shifted, smallFloat_shifted_pre;
   wire lostAll = ENABLE_FLAGS_PLost ? expDiff > (FRACTION_SIZE+1) : 0;
-  assign {smallFloat_shifted, lostValue} = {smallFloat, {FRACTION_SIZE+1{1'b0}}} >> expDiff;
+  assign {smallFloat_shifted_pre, lostValue} = {smallFloat, {FRACTION_SIZE+1{1'b0}}} >> expDiff;
+  assign smallFloat_shifted = ROUNDING_TYPE && lostValue[FRACTION_SIZE] ?  smallFloat_shifted_pre + 1 : smallFloat_shifted_pre;
   reg expInc;
   always@* begin //gaint array of and-or
     expInc = 0;
