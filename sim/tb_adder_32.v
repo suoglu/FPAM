@@ -14,8 +14,11 @@ module tb_add32();
     input[31:0] a;
     input[31:0] b;
 
-    if(a == b) begin
+    if(a[31:1] == b[31:1]) begin
       $display("PASSED: Both values match!");
+      if(a[0] != b[0]) begin
+        $display("Diffrent rounding!");
+      end
     end else begin
       $display("FAILED: Wrong calculation! ***********************");
     end
