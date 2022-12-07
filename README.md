@@ -30,6 +30,8 @@ Two computation modules and a simple wrapper that contains both adder and multip
 
 ### Ports
 
+Ports of the all modules/IPs named in same manner.
+
 |   Port   | Type | Width | Occurrence | Description | Notes |
 | :------: | :----: | :----: | :----: | :-----:  | ---- |
 | `num0` | I | `BIT_SIZE` | Mandatory | Operand | |
@@ -46,6 +48,8 @@ I: Input  O: Output
 
 ### Parameters
 
+Following parameters can be used to modify the size of operation and the output flags.
+
 |Parameter|Possible Values|Description|
 | :----: | :-----:  | ---- |
 | `BIT_SIZE` | _32_, _64_ | Operation Size |
@@ -55,8 +59,8 @@ I: Input  O: Output
 | `ENABLE_FLAGS_ZERO` | bool | Enable `zero` |
 | `ENABLE_FLAGS_NaN` | bool | Enable `NaN` |
 | `ENABLE_FLAGS_PLost` | bool | Enable `precisionLost` |
-| `Common Input` | bool | In wrapper, both adder and multiplier uses same inputs |
-| `Common Output` | bool | In wrapper, both adder and multiplier uses same outputs, enables `select`  |
+
+For custom exponent formats, one can enable "value override" mode with `FORMAT_OVERRIDE` and enter corresponding widths to `EXPONENT_SIZE_OR` and `FRACTION_SIZE_OR`. Sign bit is always 1 bit. Custom formats are not tested.
 
 ## Performance and Resource Utilization
 
@@ -75,6 +79,8 @@ All values in this section are for Xilinx Artix-7 (_XC7A100TCSG324-1_) FPGA.
 ## Simulation
 
 Test benches will both generate a waveform and display overview of the test cases. Overview messages show operands, result, manually calculated expected result, and flag information.
+
+[convertFloat.py](scripts/convertFloat.py) can be used to help with verification. It should convert values between formats. However this script is not thoroughly tested.
 
 ## Test
 
