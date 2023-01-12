@@ -6,7 +6,7 @@
  * ------------------------------------------------ *
  * File        : fp_adder.v                         *
  * Author      : Yigit Suoglu                       *
- * Last Edit   : 01/12/2022                         *
+ * Last Edit   : 12/01/2023                         *
  * ------------------------------------------------ *
  * Description : Floating point adder               *
  * ------------------------------------------------ *
@@ -53,8 +53,6 @@ module fp_adder#(
   end
   localparam EXPONENT_SIZE = FORMAT_OVERRIDE ? EXPONENT_SIZE_OR : BIT_SIZE == 64 ? 11 :  8;
   localparam FRACTION_SIZE = FORMAT_OVERRIDE ? FRACTION_SIZE_OR : BIT_SIZE == 64 ? 52 : 23;
-
-  assign flagRaised = ENABLE_FLAGS_MASTER ? overflow | zero | NaN | precisionLost : 0;
 
   //Decode values
   wire sign0, sign1, signBig, signSmall, signRes;
